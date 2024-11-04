@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: firebase-messaging
+
+
+fcm:
+  firebase:
+    service-account: firebase-secret.json
