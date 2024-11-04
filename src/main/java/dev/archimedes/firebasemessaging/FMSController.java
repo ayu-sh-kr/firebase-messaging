@@ -18,19 +18,19 @@ public class FMSController {
 
   @PostMapping("/v1/singleton")
   @ResponseStatus(HttpStatus.OK)
-  void send(SingleMessageRequest request) throws FirebaseMessagingException {
+  void send(@RequestBody SingleMessageRequest request) throws FirebaseMessagingException {
     messageUsingTokenUseCase.execute(request);
   }
 
   @PostMapping("/v1/broadcast")
   @ResponseStatus(HttpStatus.OK)
-  void send(BatchMessageRequest request) throws FirebaseMessagingException {
+  void send(@RequestBody BatchMessageRequest request) throws FirebaseMessagingException {
     messageUsingTokenUseCase.execute(request);
   }
 
   @PostMapping("/v1/topic")
   @ResponseStatus(HttpStatus.OK)
-  void send(TopicMessageRequest request) throws FirebaseMessagingException {
+  void send(@RequestBody TopicMessageRequest request) throws FirebaseMessagingException {
     messageUsingTopicUseCase.execute(request);
   }
 
